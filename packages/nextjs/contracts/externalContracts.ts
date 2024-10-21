@@ -1,14 +1,15 @@
-import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
-// interface GenericContractsDeclaration {
-//   name: string;
-//   address: string;
-//   abi: any[];
-// }
+//import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
+interface GenericContractsDeclaration {
+  name: string;
+  address: string;
+  abi: any[];
+}
 
+  
 
-   const externalContracts = {
-    0: {
-     TokenExchange: {
+   const externalContracts = [
+     {
+     name: "TokenSwap",
         address: "0xDc30311cD698e8D625444A43b5aCe08aF2C9FAFB",
         abi: [
           {
@@ -8086,12 +8087,12 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
               }
             ]
           }
-        ],
+        ]
+    
     },
-    },
-    1: {
-      MyToken1: {
-         address: "0x487697BA791CD4dEd7A9C6769915c55E71bECEA0",
+   {
+      name: "MyToken1",
+               address: "0x487697BA791CD4dEd7A9C6769915c55E71bECEA0",
          abi: [
           {
             "deploy": {
@@ -19996,11 +19997,11 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
               }
             ]
           }
-],
+]
+     
      },
-     },
-    2: {
-      MyToken2: {
+    {
+        name: "MyToken2",
          address: "0xe5806B516d9609F34C07a57dE45bEE5E168Af6A9",
          abi: [
           {
@@ -31906,11 +31907,11 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
               }
             ]
           }
-],
+]
+     
      },
-     },
-  } as const;
+  ] satisfies GenericContractsDeclaration[];
  
 
 
-export default externalContracts satisfies GenericContractsDeclaration;
+export default externalContracts ;
